@@ -1,0 +1,129 @@
+/* Are the Dash Playing global styles */
+/* Author: Patrick Beeson, pbeeson@thevariable.com */
+/* Copyright The Variable http://thevariable.com */
+
+@import '../css/normalize.css';
+@import 'breakpoint';
+@import 'susy';
+@import 'compass/typography/vertical_rhythm';
+
+// Background colors
+$home: #532e91;
+$away: #ccc;
+
+// Vertical rhythm
+$base-font-size: 18px;
+$base-line-height: 30px;
+
+@include establish-baseline;
+
+$susy: (
+    columns: 12,
+    gutters: 1/4,
+    debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+);
+
+/* global */
+
+body {
+    font-family: Helvetica, sans-serif;
+    color: #fff;
+
+    &.home {
+        background-color: $home;
+    }
+
+    &.away {
+        background-color: $away;
+    }
+}
+
+.container {
+    @include container;
+}
+
+a {
+    color: #fff;
+    text-decoration: underline;
+
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+/* header */
+header {
+    margin: rhythm(2) 0;
+
+    #logo {
+        position: relative;
+        width: 237px;
+        background: url(../img/dash_playing_logo.png) no-repeat center center;
+        height: 270px;
+        margin: 0 auto;
+
+        a {
+            position: absolute;
+            width: 237px;
+            height: 270px;
+            text-indent: -9999px;
+            text-decoration: none;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
+/* answer */
+section#answer {
+    text-align: center;
+    color: #fff;
+    margin: rhythm(1) 0;
+
+    h1 {
+        @include adjust-font-size-to(134px);
+        font-weight: bold;
+        margin: rhythm(1/8) 0;
+    }
+
+    h2 {
+        @include adjust-font-size-to(18px);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .ticket_push {
+        @include adjust-font-size-to(18px);
+        margin: rhythm(2) 0;
+    
+        a {
+            text-decoration: none;
+        
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+#game_info {
+    @include adjust-font-size-to(18px);
+    letter-spacing: 1px;
+    padding-left: 0px;
+
+    li {
+        list-style: none;
+    }
+}
+
+/* footer */
+footer {
+    text-align: center;
+    margin: rhythm(4) 0;
+}

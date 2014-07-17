@@ -1,0 +1,91 @@
+/* Are the Dash Playing global styles */
+/* Author: Patrick Beeson, pbeeson@thevariable.com */
+/* Copyright The Variable http://thevariable.com */
+
+/* global */
+body {
+	font-family: Helvetica, sans-serif;
+	color: #fff;
+}
+
+body.home {
+	background-color: #532e91;
+}
+
+body.away {
+	background-color: #ccc;
+}
+
+a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* header */
+#logo {
+	position: relative;
+	width: 237px;
+	background: url(../img/dash_playing_logo.png) no-repeat center center;
+	height: 270px;
+	margin: 100px auto 50px auto;
+}
+
+#logo a {
+	position: absolute;
+	width: 237px;
+	height: 270px;
+	text-indent: -9999px;
+	text-decoration: none;
+	left: 0;
+	top: 0;
+}
+
+/* answer */
+section#answer {
+	color: #fff;
+}
+
+section#answer h1 {
+	font-size: 120px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+section#answer h2 {
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+#game_info {
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+
+#game_info li {
+	padding-bottom: 5px;
+}
+
+.ticket_push {
+	margin-top: 50px;
+	font-size: 18px;
+}
+
+section#answer .ticket_push a {
+	text-decoration: none;
+}
+
+section#answer .ticket_push a:hover {
+	text-decoration: underline;
+}
+
+/* footer */
+footer {
+	margin-top: 125px;
+	color: ;
+}

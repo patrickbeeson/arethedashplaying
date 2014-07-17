@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Are the Dash Playing? | arethedashplaying.com
+{% endblock title %}
+
+{% block game_type %}
+    {% if game.is_away == False %}home{% else %}away{% endif %}
+{% endblock game_type %}
+
+{% block content %}
+        <section id="answer" class="text-center">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <h1>{{ message }}</h1>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <h2>Next game:</h2>
+        <ul id="game_info" class="list-unstyled">
+            <li class="opponent">{% if game.opponent.id == 8 %}{% else %}vs.{% endif %} {{ game.opponent.name }}</li>
+            <li class="date">{{ game.date.strftime('%A, %B %d') }}</li>
+            {% if game.time %}<li class="time">{{ game.time.strftime('%l:%M %p') }}</li>{% endif %}
+            <li class="location">{% if game.is_away == False %}BB&amp;T Ballpark{% else %}Away{% endif %}</li>
+        </ul>
+
+        <p class="ticket_push"><i class="fa fa-ticket"></i> <a href="{% if game.ticket_url %}{{ game.ticket_url }}{% else %}http://www.milb.com/tickets/singlegame.jsp?sid=t580{% endif %}">GET TICKETS</a></p>
+        </section>
+{% endblock content %}

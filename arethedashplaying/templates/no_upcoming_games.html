@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Are the Dash Playing? | arethedashplaying.com
+{% endblock title %}
+
+{% block game_type %}
+home
+{% endblock game_type %}
+
+{% block content %}
+        <section id="answer" class="text-center">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <h1>{{ message }}</h1>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <p>The Dash's regular season has ended. But you can always <a href="http://www.milb.com/index.jsp?sid=t580">check their website</a> for updates.</p>
+        </section>
+{% endblock content %}

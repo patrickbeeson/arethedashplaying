@@ -1,0 +1,7 @@
+*.pyc
+*.DS_Store
+config.py
+config.rb
+fabfile.py
+.hgignore
+*sass-cache
