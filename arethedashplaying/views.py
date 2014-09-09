@@ -33,7 +33,7 @@ def index():
             flash('NO')
         return render_template('home.html', game=game, last_game=last_game)
     # Show the no upcoming games template if the season has ended
-    elif now_eastern.date() == season_end_date:
+    elif now_eastern.date() >= season_end_date:
         flash('NO')
         return render_template('no_upcoming_games.html')
     # Show that we're missing data with unique template
